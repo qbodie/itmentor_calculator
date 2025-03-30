@@ -45,7 +45,7 @@ def multiply(a, b):
 def division(a, b):
 
     if b != "0":
-        return print(int(a) / int(b))
+        return print(int(a) // int(b))
 
     return print("Делить на ноль нельзя!")
 
