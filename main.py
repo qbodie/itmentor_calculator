@@ -1,25 +1,33 @@
 def calculator(temp):
     elem = temp.split(" ")
 
-    if len(elem) == 3:
+    a = int(elem[0])
+    b = int(elem[2])
 
-        if elem[1] == "+":
-            return plus(elem[0], elem[2])
+    if a <= 10 and b <= 10:
 
-        elif elem[1] == "-":
-            return minus(elem[0], elem[2])
+        if len(elem) == 3:
 
-        elif elem[1] == "*":
-            return multiply(elem[0], elem[2])
+            if elem[1] == "+":
+                return plus(a, b)
 
-        elif elem[1] == "/":
-            return division(elem[0], elem[2])
+            elif elem[1] == "-":
+                return minus(a, b)
+
+            elif elem[1] == "*":
+                return multiply(a, b)
+
+            elif elem[1] == "/":
+                return division(a, b)
+
+            else:
+                return print("строка не является математической операцией")
 
         else:
-            return print("строка не является математической операцией")
+            return print("формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)")
 
     else:
-        return print("формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)")
+        print("Неверный формат!")
 
 
 def plus(a, b):
@@ -31,7 +39,6 @@ def minus(a, b):
 
 
 def multiply(a, b):
-
     return print(int(a) * int(b))
 
 
@@ -41,6 +48,8 @@ def division(a, b):
         return print(int(a) / int(b))
 
     return print("Делить на ноль нельзя!")
+
+
 
 
 if __name__ == "__main__":
